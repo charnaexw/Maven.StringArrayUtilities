@@ -30,6 +30,7 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
+
         return array[-1];
     }//need to be fixed
 
@@ -38,6 +39,7 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
+
         return array[-2];
     }//need to be fixed
 
@@ -59,15 +61,17 @@ public class StringArrayUtils {
      * @param array of String objects
      * @return an array with identical contents in reverse order
      */ // TODO
-    //public static String[] reverse(String[] array) {
-        //List<Object> theReverseFlash = new theReverseFlash[];
-        //int x = theReverseFlash.length;
-        //for (int i = -1; i >= x; i--) {
-       //     theReverseFlash.add(array[i]) = theNewReverseFlash[];
-       // }
+    public static String[] reverse(String[] array) {
+        ArrayList<String> theReverseFlash = new ArrayList<String>(Arrays.asList(array));
 
 
-        //return theNewReverseFlash[];
+        return new StringBuilder(theReverse).reverse().toString();
+    }
+
+
+
+
+
 
 
     /**
@@ -106,9 +110,10 @@ public class StringArrayUtils {
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
         int numOfDaValue=0;
-        String value="";
-        for(int i=0; i<= array.length; i++){
-            if(value==i){
+        ArrayList<String>checkThisArray= new ArrayList<String>(Arrays.asList(array));
+        String thisArray = checkThisArray.toString();
+        for(int i=0; i<= thisArray.length(); i++){
+            if(i=value){
                 numOfDaValue=numOfDaValue+1;
             }
         }
@@ -122,7 +127,7 @@ public class StringArrayUtils {
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
         String valueToRemove="";
-        String<String>newValue=new newValue<String>();
+        ArrayList<String>newValue=new newValue<String>();
 
         return newValue.replaceAll(valueToRemove, "");
     }
