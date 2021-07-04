@@ -31,8 +31,12 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
+        String last ="";
+        ArrayList<String> newArray = new ArrayList<String>(Arrays.asList(array));
 
-        return array[-1];
+
+
+        return newArray.get(newArray.size() - 1) ;
     }//need to be fixed
 
     /**
@@ -40,8 +44,13 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
+        ArrayList<String> newArray = new ArrayList<String>(Arrays.asList(array));
 
-        return array[-2];
+
+
+        return newArray.get(newArray.size() - 2);
+
+
     }//need to be fixed
 
     /**
@@ -64,9 +73,12 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        ArrayList<String> theReverseFlash = new ArrayList<String>(Arrays.asList(array));
-        Collections.reverse(theReverseFlash);
-        return
+        ArrayList<String> theFlash = new ArrayList<String>();
+        int x = array.length - 1;
+        for (int i = x; i >= 0; i--)
+          theFlash.add(array[i]);
+
+        return theFlash.toArray(new String[0]);
     }
 
     /**
@@ -159,7 +171,7 @@ public class StringArrayUtils {
                 }
             }
         }
-        return;
+        return null;
     }
 }
 
