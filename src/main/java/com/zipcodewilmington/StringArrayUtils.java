@@ -2,6 +2,7 @@ package com.zipcodewilmington;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -49,12 +50,13 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        for(String element: array) {//the type of array, variable name: what the array that you wanna loop through
+        for (String element : array) {//the type of array, variable name: what the array that you wanna loop through
             if (element == value) {
                 return true;
             }
 
-        }return false;
+        }
+        return false;
     }
 
     /**
@@ -63,29 +65,23 @@ public class StringArrayUtils {
      */ // TODO
     public static String[] reverse(String[] array) {
         ArrayList<String> theReverseFlash = new ArrayList<String>(Arrays.asList(array));
-
-
-        return new StringBuilder(theReverse).reverse().toString();
+        Collections.reverse(theReverseFlash);
+        return
     }
-
-
-
-
-
-
 
     /**
      * @param array array of String objects
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        for(int i=0; i<= ((array.length)%2); i++) {
+        for (int i = 0; i <= ((array.length) % 2); i++) {
             for (int j = -1; i >= ((array.length) % 2); i--) {
                 if (array[i] == array[j]) {
                     return true;
-                } else return false;
+                }
             }
         }
+        return false;
     }
 
     /**
@@ -94,13 +90,13 @@ public class StringArrayUtils {
      */ // TODO
     public static boolean isPangramic(String[] array) {
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        ArrayList<String>calenderMan= new ArrayList<String>(Arrays.asList(array));
-        String theWholeString= calenderMan.toString();
-        for(int i=0; i< alphabet.length(); i++){
-            if(theWholeString.indexOf(alphabet.charAt(i)) == -1);
-        }return false;
+        ArrayList<String> calenderMan = new ArrayList<String>(Arrays.asList(array));
+        String theWholeString = calenderMan.toString();
+        for (int i = 0; i < alphabet.length(); i++) {
+            if (theWholeString.indexOf(alphabet.charAt(i)) == -1) ;
+        }
+        return false;
     }
-
 
 
     /**
@@ -109,12 +105,12 @@ public class StringArrayUtils {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        int numOfDaValue=0;
-        ArrayList<String>checkThisArray= new ArrayList<String>(Arrays.asList(array));
-        String thisArray = checkThisArray.toString();
-        for(int i=0; i<= thisArray.length(); i++){
-            if(i=value){
-                numOfDaValue=numOfDaValue+1;
+        int numOfDaValue = 0;
+        //ArrayList<String> checkThisArray = new ArrayList<String>(Arrays.asList(array));
+        //String thisArray = checkThisArray.toString();
+        for (int i = 0; i <= array.length; i++) {
+            if (array[i].equals(value)) {
+                numOfDaValue = numOfDaValue + 1;
             }
         }
         return numOfDaValue;
@@ -126,10 +122,13 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        String valueToRemove="";
-        ArrayList<String>newValue=new newValue<String>();
-
-        return newValue.replaceAll(valueToRemove, "");
+        for (int i = 0; i <= array.length; i++) {
+            if (array[i].equals(valueToRemove)) {
+                array[i] = null;
+                break;
+            }
+        }
+        return array;
     }
 
     /**
@@ -137,14 +136,15 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        for(int i=0; i<= array.length; i++){
-            for(int j=1; j< array.length[i]; j++){
-                if(i==j){
-                    array.replace(j, " ");
+        for (int i = 0; i <= array.length; i++) {
+            for (int j = 1; j > array.length; j++) {
+                if (i == j) {
+                    array[j].replaceAll(String.valueOf(j), " ");
+
                 }
             }
         }
-        return null;
+        return array;
     }
 
     /**
@@ -152,17 +152,14 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
-            for(int i=0; i<= array.length; i++){
-                for(int j=1; j< array.length[i]; j++){
-                    if(i==j){
-                        array.replace(j, " ")=;
-                    }
+        for (int i = 0; i <= array.length; i++) {
+            for (int j = 1; j < array.length; j++) {
+                if (i == j){
+                    array[j].replaceAll(String.valueOf(j), " ");
                 }
             }
-            return null;
         }
-
+        return;
     }
-
-
 }
+
