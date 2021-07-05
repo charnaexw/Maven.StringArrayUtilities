@@ -104,10 +104,12 @@ public class StringArrayUtils {
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         ArrayList<String> calenderMan = new ArrayList<String>(Arrays.asList(array));
         String theWholeString = calenderMan.toString();
-        for (int i = 0; i < alphabet.length(); i++) {
-            if (theWholeString.indexOf(alphabet.charAt(i)) == -1) ;
+        for (int i = 0; i < alphabet.length()-1; i++) {
+            if (theWholeString.indexOf(alphabet.charAt(i-1)) == -1){
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 
 
@@ -166,12 +168,11 @@ public class StringArrayUtils {
     public static String[] packConsecutiveDuplicates(String[] array) {
         for (int i = 0; i <= array.length; i++) {
             for (int j = 1; j < array.length; j++) {
-                if (i == j){
+                if (i == j) {
                     array[j].replaceAll(String.valueOf(j), " ");
                 }
             }
-        }
-        return null;
-    }
+        }return array;
+    };
 }
 
